@@ -1,0 +1,580 @@
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html,
+button,
+input,
+select,
+textarea {
+    color: #222;
+}
+
+html {
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight: h5bp.com/i
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between images, videos, audio and canvas and the bottom of
+ * their containers: h5bp.com/i/440
+ */
+
+audio,
+canvas,
+img,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Site styles
+   ========================================================================== */
+
+    /* apply a natural box layout model to all elements */
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: border-box;
+               -moz-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+
+
+    /* defaults */
+        html,
+        body {
+            height:100%;
+        }
+
+        html {
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            font-family:"brandon-grotesque-regular", Helvetica, Arial, sans-serif;
+            color:#fff;
+            line-height:1.5em;
+        }
+
+        @media (min-width:600px) {
+            body {
+                line-height:2em;
+            }
+        }
+
+        h1 {
+            font-family:"brandon-grotesque-bold", Helvetica, Arial, sans-serif;
+            font-weight:normal;
+            font-size:1.25em; /* 20 / 16 */
+        }
+
+        @media (min-width:600px) {
+            h1 {
+                font-size:1.5em; /* 24 / 16 */
+            }
+        }
+
+        h2 {
+            font-family:"brandon-grotesque-medium", Helvetica, Arial, sans-serif;
+            font-weight:normal;
+            font-size:1.25em; /* 20 / 16 */
+            margin:0;
+        }
+
+        @media (min-width:600px) {
+            h2 {
+                font-size:1.5em; /* 24 / 16 */
+            }
+        }
+
+        h3 {
+            font-weight:normal;
+            margin:0;
+        }
+
+        h3,
+        p,
+        ul {
+            font-size:1em; /* 16 */
+        }
+
+        @media (min-width:600px) {
+            h3,
+            p,
+            ul {
+                font-size:1.25em; /* 20 / 16 */
+            }
+        }
+
+        p {
+            margin:1.5em 0;
+        }
+
+        a {
+            color:#fff;
+            text-decoration:none;
+            border-bottom:1px solid #fff;
+        }
+
+        /* transition font sizes and line height */
+        body,
+        h1, h2, h3
+        p, ul {
+            -webkit-transition: all 0.25s;
+               -moz-transition: all 0.25s;
+                -ms-transition: all 0.25s;
+                 -o-transition: all 0.25s;
+                    transition: all 0.25s;
+        }
+
+
+    /* wrapper */
+        .wrapper {
+            height:100%;
+        }
+
+
+    /* slides */
+        .slide {
+            padding:1em;
+            text-align:center;
+            overflow:hidden;
+            position:relative;
+            min-height:97.5%;
+        }
+
+        @media (min-width:600px) {
+            .slide {
+                padding:12em 1em;
+                display:table;
+                width:100%;
+            }
+
+            .slide p:first-child {
+                margin-top:0;
+            }
+        }
+
+            .slide-intro   { background:#0037b6; }
+            .slide-about   { background:#0bb286; }
+            .slide-contact { background:#e83303; }
+
+            .slide-content {
+                position:relative;
+                max-width:1300px;
+                margin:0 auto;
+            }
+
+            @media (min-width:600px) {
+                .slide-content {
+                    display:table-cell;
+                    text-align:center;
+                    vertical-align:middle;
+                }
+            }
+
+
+        /* slide - intro */
+            .slide-intro { }
+
+                .cohort-logo {
+                    margin-bottom:2em;
+                }
+
+                @media (min-width:600px) {
+                    .cohort-logo {
+                        position:fixed;
+                        top:10%;
+                        left:50%;
+                        margin-left:-72px; /* 144px */
+                        z-index:10;
+                    }
+                }
+
+                .intro-block {
+                    width:90%;
+                    margin:0 auto;
+                    padding:1em;
+                    border:6px solid #fff;
+                    max-width:780px;
+                    max-height:350px;
+                }
+
+                @media (min-width:600px) {
+                    .intro-block {
+                        width:80%;
+                        padding:4em 1em 5em 1em;
+                    }
+                }
+
+                @media (max-width:400px) {
+                    .intro-block h1 span {
+                        display:block;
+                    }
+                }
+
+
+        /* slide - about */
+            .slide-about { }
+
+            /* about blocks */
+                .about-block {
+                    text-align:center;
+                    margin:2em 5% 2em 5%;
+                }
+
+                .about-block p {
+                    margin:0;
+                }
+
+                @media (min-width:600px) {
+                    .about-block {
+                        margin-top:0;
+                        margin-left:10%;
+                        margin-right:10%;
+                    }
+                }
+
+                @media (min-width:800px) {
+                    .about-block {
+                        margin-left:50%;
+                        margin-right:10%;
+                        max-width:400px;
+                        text-align:left;
+                    }
+                }
+
+            /* about services */
+                .about-services {
+                    position:relative;
+                    margin:8em 0;
+                }
+
+                @media (min-width:800px) {
+                    .about-services {
+                        position:absolute;
+                        left:50%;
+                        margin-left:-20em;
+                        top:50%;
+                        margin-top:-5em;
+                    }
+                }
+
+                .about-services-diamond {
+                    position:absolute;
+                    top:0;
+                    left:50%;
+                    margin-left:-13.3em;
+                    width:13em;
+                    height:13em;
+                    border:6px solid #fff;
+
+                    -webkit-transform: rotate(-45deg);
+                       -moz-transform: rotate(-45deg);
+                        -ms-transform: rotate(-45deg);
+                         -o-transform: rotate(-45deg);
+                            transform: rotate(-45deg);
+                    -webkit-transform-origin: 57% -22%;
+                       -moz-transform-origin: 57% -22%;
+                        -ms-transform-origin: 57% -22%;
+                         -o-transform-origin: 57% -22%;
+                            transform-origin: 57% -22%;
+                }
+
+                @media (min-width:600px) {
+                    .about-services-diamond {
+                        left:50%;
+                        margin-left:-16.5em;
+                        width:16em;
+                        height:16em;
+                    }
+                }
+
+                @media (min-width:800px) {
+                    .about-services-diamond {
+                        margin-left:-13.3em;
+                        left:0;
+                        top:0;
+                        -webkit-transform-origin: 60% -38%;
+                           -moz-transform-origin: 60% -38%;
+                            -ms-transform-origin: 60% -38%;
+                             -o-transform-origin: 60% -38%;
+                                transform-origin: 60% -38%;
+                    }
+                }
+
+                    .about-services ul,
+                    .about-services li {
+                        margin:0;
+                        padding:0;
+                        list-style:none;
+                    }
+
+
+        /* slide - contact */
+            .slide-contact { }
+
+
+        /* arrows */
+            .arrow {}
+
+            @media (min-width:600px) {
+                .arrow {
+                    position:absolute;
+                    bottom:10%;
+                    left:50%;
+                    margin-left:-20px;
+                }
+            }
+
+                .arrow a {
+                    display:inline-block;
+                    width:40px;
+                    height:40px;
+                    border:none;
+                }
+
+                .arrow-up a { }
+
+                .arrow-up a img {
+                    -webkit-transform: rotate(180deg);
+                       -moz-transform: rotate(180deg);
+                        -ms-transform: rotate(180deg);
+                         -o-transform: rotate(180deg);
+                            transform: rotate(180deg);
+                }
+
+                .arrow-down a { }
+
+    /* helper classes */
+        /* transitions */
+            .css-transition {
+                -webkit-transition: all 0.25s;
+                   -moz-transition: all 0.25s;
+                    -ms-transition: all 0.25s;
+                     -o-transition: all 0.25s;
+                        transition: all 0.25s;
+            }
+
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Image replacement
+ */
+
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    /* IE 6/7 fallback */
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+/*
+ * Hide from both screenreaders and browsers: h5bp.com/u
+ */
+
+.hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+/*
+ * Hide only visually, but have it available for screenreaders: h5bp.com/v
+ */
+
+.visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/*
+ * Extends the .visuallyhidden class to allow the element to be focusable
+ * when navigated to via the keyboard: h5bp.com/p
+ */
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+
+/*
+ * Hide visually and from screenreaders, but maintain layout
+ */
+
+.invisible {
+    visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+/*
+ * For IE 6/7 only
+ * Include this rule to trigger hasLayout and contain floats.
+ */
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid required HTTP connection: h5bp.com/r
+   ========================================================================== */
+
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
